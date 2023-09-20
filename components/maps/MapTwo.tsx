@@ -6,7 +6,7 @@ import {
   useJsApiLoader,
   InfoWindowF,
 } from "@react-google-maps/api";
-import toast from "react-hot-toast/headless";
+import toast from 'react-hot-toast';
 
 export const DEFAULT_DISTANCE = 100;
 

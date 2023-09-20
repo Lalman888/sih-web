@@ -13,7 +13,8 @@ export default function Navbar() {
     { title: "Advisory", path: "/advisory" },
     { title: "Maps", path: "/maps" },
     { title: "Login", path: "/login" },
-    { title: "Register", path: "/register"}
+    { title: "Register", path: "/register"},
+    { title: "User", path: "/user"},
   ]
 
   return (
