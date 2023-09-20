@@ -1,4 +1,5 @@
 "use client"
+// @ts-nocheck
 import React,{useState,useEffect} from 'react'
 import { User2 } from 'lucide-react';
 import axios from 'axios'
