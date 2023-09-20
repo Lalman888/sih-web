@@ -5,7 +5,7 @@ import axios from 'axios'
 
 
 const User = () => {
-    const [userd,setUser] = useState({})
+    const [userd,setUser] = useState({} as any)
     const[id,setId] = useState(4)
 
 
