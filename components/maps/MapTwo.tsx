@@ -167,7 +167,7 @@ const places = [
       lat: 30.7754,
       lng: 76.560569,
     },
-    details: "Pounds are dirty",
+    details: "Pound are dirty",
     image: "https://img.freepik.com/premium-photo/dirty-pond-with-full-water-hyacinth-inside-village_150101-3118.jpg?w=1800"
   },
   {
@@ -179,4 +179,41 @@ const places = [
     details: "Kochi Flood affected area",
     image: "https://static.theprint.in/wp-content/uploads/2018/08/2018_8img19_Aug_2018_PTI8_19_2018_000161B.jpg"
   }
+  ,
+  {
+    name: "Rajasthan",
+    location: {
+      lat: 24.466833,
+      lng: 71.311729,
+    },
+    details: "Padan Flood affected area",
+    image: "https://static.theprint.in/wp-content/uploads/2018/08/2018_8img19_Aug_2018_PTI8_19_2018_000161B.jpg"
+  },
+  {
+    name: "Mumbai",
+    location: {
+      lat: 18.966915,
+      lng: 72.969683,
+    },
+    details: "Mumbai Flood affected area",
+    image:"https://c.ndtvimg.com/2020-07/h2maeblo_bihar-floods-650_625x300_28_July_20.jpg"
+  },
+  {
+    name: "Patna",
+    location: {
+      lat: 26.067989,
+      lng: 84.145542,
+    },
+    details: "Patna Flood affected area",
+    image:"https://c.ndtvimg.com/2020-07/h2maeblo_bihar-floods-650_625x300_28_July_20.jpg"
+  },
+  {
+    name: "Nairi",
+    location: {
+      lat: 19.800392,
+      lng: 85.304074,
+    },
+    details: "Nairi Flood affected area",
+    image:"https://c.ndtvimg.com/2020-07/h2maeblo_bihar-floods-650_625x300_28_July_20.jpg"
+  },
 ];
