@@ -25,8 +25,8 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white w-full border-b md:border-0">
-      <div className="items-baseline px-4 max-w-screen-xl mx-auto md:flex md:px-8">
-        <div className="flex items-center justify-between py-3 md:py-5 md:block">
+      <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8 py-4">
+        <div className="flex items-center justify-between md:block">
           <Link href="/">
             <h1 className="text-3xl font-bold text-black">
                 JalDoot
@@ -43,8 +43,9 @@ export default function Navbar() {
             </button>
           </div>
         </div>
+        
         <div
-          className={`flex-1 sm:relative sm:shadow-none absolute sm:bg-transparent bg-white w-full z-20 -ml-3 pl-5 transition-all duration-500 ease-linear justify-self-center pb-3 pt-8 shadow-2xl md:block md:pb-0 md:mt-0 ${
+          className={`flex-1 sm:relative sm:shadow-none absolute sm:bg-transparent bg-white w-full z-20 transition-all duration-500 ease-linear justify-self-center shadow-2xl md:block ${
             state ? "block" : "hidden"
           }`}
         >
@@ -88,10 +89,10 @@ export default function Navbar() {
               />
             </form> */}
           </ul>
-          
         </div>
-        <div className="absolute top-6 right-20">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/G20_India_2023_logo.svg/2560px-G20_India_2023_logo.svg.png" alt="logo" className="w-32 h-16" />
+
+        <div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/G20_India_2023_logo.svg/2560px-G20_India_2023_logo.svg.png" alt="logo" className="w-32 h-16 hidden lg:block" />
         </div>
       </div>
     </nav>
