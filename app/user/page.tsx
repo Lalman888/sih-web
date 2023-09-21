@@ -18,10 +18,10 @@ const User = () => {
     }
 
     useEffect(() => {
-        if(localStorage?.getItem('id')){
-            setId(localStorage?.getItem('id') as any)
-        }
-        getUser()
+        // if(localStorage?.getItem('id')){
+        //     setId(localStorage?.getItem('id') as any)
+        // }
+        // getUser()
     },[])
 
   return (
@@ -32,11 +32,11 @@ const User = () => {
                 <User2 size={64}   />
                 </div>
             <div className='flex justify-center'>
-                <p className='text-lg font-semibold'>{userd.role}</p>
+                <p className='text-lg font-semibold'>{userd.role || "User"}</p>
                 
             </div>
             <div className='flex justify-center'>
-                <p className='text-lg font-semibold'>{userd.email}</p>
+                <p className='text-lg font-semibold'>{userd.email || "abc@email.com"}</p>
             </div>
         </div>
 

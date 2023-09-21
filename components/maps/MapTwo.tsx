@@ -23,12 +23,13 @@ async function getLatLng(address: string) {
     )}&key=AIzaSyAW-yfggxPKG70-wGj_e634dgadcJZfe-I`
   );
   const geoCodeResponse = await res.json();
+  // console.log(geoCodeResponse);
   if (!geoCodeResponse || geoCodeResponse.status === "ZERO_RESULTS") {
     toast.error("No results found");
     return;
   }
   const { lat, lng } = geoCodeResponse.results[0].geometry.location;
-  console.log(lat, lng);
+  // console.log(lat, lng);
   return { lng, lat };
 }
 
@@ -56,7 +57,8 @@ function MapTwo() {
     setMap(null);
   }, []);
 
-  const search = async () => {
+  const search = async (e) => {
+    e.preventDefault();
     // @ts-ignore
     const city = cityRef.current.value;
     // @ts-ignore
@@ -70,7 +72,7 @@ function MapTwo() {
   return (
     <>
       <div className="relative">
-        <div className="absolute top-0 left-0 z-10 w-full h-16 bg-white flex items-center justify-center">
+        <div className="absolute top-0 left-0 z-10 w-full h-16  flex items-center justify-center">
           <form onSubmit={search}>
             <input
               ref={cityRef}
@@ -79,7 +81,7 @@ function MapTwo() {
               }}
               type="text"
               placeholder="Enter city"
-              className="w-1/2 h-10 border border-gray-300 rounded-md px-2"
+              className="w-80 h-10 border border-gray-300 rounded-md px-2"
             />
             <button className="bg-blue-500 text-white px-4 py-2 rounded-md ml-2">
               Search
@@ -91,7 +93,7 @@ function MapTwo() {
           <GoogleMap
             mapContainerStyle={containerStyle}
             center={center}
-            zoom={13}
+            zoom={11}
             onLoad={onLoad}
             onUnmount={onUnmount}
           >

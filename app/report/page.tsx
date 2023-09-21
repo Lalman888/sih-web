@@ -49,8 +49,19 @@ const Report = () => {
           }
           }
           )
-          toast.success('Report Submitted Successfully')
-    console.log(res, ' r es')
+         
+          setTitle('')
+          setDescription('')
+          setPicture(null)
+          // @ts-ignore
+          if(res?.published){
+            toast.success('Report Submitted Successfully')
+          }
+          else{
+            toast.error('Report Submission Failed')
+          }
+
+    // console.log(res, ' r es')
 
         }
       // }

@@ -6,16 +6,21 @@ import { Menu, Search,Siren,PenSquare,Home,X } from "lucide-react"
 
 export default function Navbar() {
   const [state, setState] = React.useState(false)
+  const [isLogin,setIsLogin] = React.useState(false)
 
   const menus = [
     { title: "Home", path: "/" },
     { title: "Report Anomaly", path: "/report" },
     { title: "Advisory", path: "/advisory" },
     { title: "Maps", path: "/maps" },
-    { title: "Login", path: "/login" },
-    { title: "Register", path: "/register"},
-    { title: "User", path: "/user"},
   ]
+
+  React.useEffect(() => {
+    if(localStorage?.getItem('access_token')){
+      setIsLogin(true)
+
+    }
+  },[])
 
   return (
     <nav className="bg-white w-full border-b md:border-0">
@@ -48,6 +53,29 @@ export default function Navbar() {
                 <Link href={item.path}>{item.title}</Link>
               </li>
             ))}
+             {
+                !isLogin ? (
+                  <>
+                  <li  className="text-gray-600 hover:text-black">
+                <Link href={'/login'}>
+                  Login
+                </Link>
+              </li>
+              <li  className="text-gray-600 hover:text-black">
+                <Link href={'/register'}>Register</Link>
+              </li>
+                  </> ): (
+                    <>
+                    <li  className="text-gray-600 hover:text-black">
+                <Link href={'/user'}>
+                  User
+                </Link>
+              </li>
+                    </>
+                  )
+             }
+              
+
             {/* <form className="flex items-center  space-x-2 border rounded-md p-2">
               <Search className="h-5 w-5 flex-none text-gray-300" />
               <input
