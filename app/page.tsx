@@ -35,26 +35,33 @@ export default function Home() {
       <div>
          <h3 className='text-2xl my-5 font-bold'>Recent Activity</h3>
          <div className='grid grid-cols-2 gap-12 mt-8'>
-              <Link href="/advisory">
-            <Card className='px-4 flex justify-center py-6'>
-                <Droplet size={36} />
+            <Link href="/advisory">
+              <Card className='px-4 flex justify-center items-center py-6 gap-4'>
+                <Droplet size={40} />
+                <h3 className='text-xl font-semibold'>Advisory</h3>
               </Card>
-              </Link>
-              <Link href="/report">
-            <Card className='px-4 flex justify-center py-6'>
-                <Flag size={36} />
-            </Card>
-              </Link>
-              <Link href="/maps">
-            <Card className='px-4 flex justify-center py-6'>
-                <Locate size={36} />
-            </Card>
-              </Link>
-              <Link href="/login">
-            <Card className='px-4 flex justify-center py-6'>
-                <LogIn size={36} />
-            </Card>
-              </Link>
+            </Link>
+
+            <Link href="/report">
+              <Card className='px-4 flex justify-center items-center py-6 gap-4'>
+                <Flag size={40} />
+                <h3 className='text-xl font-semibold'>Report</h3>
+              </Card>
+            </Link>
+
+            <Link href="/maps">
+              <Card className='px-4 flex justify-center items-center py-6 gap-4'>
+                <Locate size={40} />
+                <h3 className='text-xl font-semibold'>Problems</h3>
+              </Card>
+            </Link>
+
+            <Link href="/login">
+              <Card className='px-4 flex justify-center items-center py-6 gap-4'>
+                <LogIn size={40} />
+                <h3 className='text-xl font-semibold'>Log in</h3>
+              </Card>
+            </Link>
 
 
 

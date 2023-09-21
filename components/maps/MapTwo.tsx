@@ -10,6 +10,7 @@ import {
 import toast from 'react-hot-toast';
 
 export const DEFAULT_DISTANCE = 100;
+export const zoom = 12;
 
 const containerStyle = {
   width: "100%",
@@ -47,8 +48,9 @@ function MapTwo() {
 
   const onLoad = React.useCallback(function callback(map: any) {
     // This is just an example of getting and using the map instance!!! don't just blindly copy!
-    const bounds = new window.google.maps.LatLngBounds(center);
-    map.fitBounds(bounds);
+    // const bounds = new window.google.maps.LatLngBounds(center);
+    // map.fitBounds(bounds);
+    map.setZoom(zoom)
 
     setMap(map);
   }, []);
@@ -72,7 +74,7 @@ function MapTwo() {
   return (
     <>
       <div className="relative">
-        <div className="absolute top-0 left-0 z-10 w-full h-16  flex items-center justify-center">
+        <div className="absolute top-5 left-0 z-10 w-full h-16  flex items-center justify-center">
           <form onSubmit={search}>
             <input
               ref={cityRef}
@@ -83,7 +85,7 @@ function MapTwo() {
               placeholder="Enter city"
               className="w-80 h-10 border border-gray-300 rounded-md px-2"
             />
-            <button className="bg-blue-500 text-white px-4 py-2 rounded-md ml-2">
+            <button className="bg-black text-white px-4 py-2 rounded-md ml-2">
               Search
             </button>
           </form>
@@ -92,8 +94,9 @@ function MapTwo() {
         {isLoaded ? (
           <GoogleMap
             mapContainerStyle={containerStyle}
+          
             center={center}
-            zoom={11}
+            zoom={4}
             onLoad={onLoad}
             onUnmount={onUnmount}
           >
@@ -118,6 +121,9 @@ function MapTwo() {
                 onCloseClick={() => setSelected(undefined)}
               >
                 <div>
+                  
+                   {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={selected.image} alt={selected.name} className="w-60 h-40 p-2" />
                   <h2>{selected.name}</h2>
                   <p>{selected.details}</p>
                 </div>
@@ -144,6 +150,7 @@ const places = [
       lng: 76.738924,
     },
     details: "Flood affected area",
+    image:"https://c.ndtvimg.com/2020-07/h2maeblo_bihar-floods-650_625x300_28_July_20.jpg"
   },
   {
     name: "Kharar",
@@ -151,15 +158,17 @@ const places = [
       lat: 30.751191,
       lng: 76.737301,
     },
-    details: "Water logging",
+    details: "Roads are blocked",
+    image: "https://images.hindustantimes.com/img/2021/07/19/550x309/0c4483f8-e871-11eb-9a2b-f40b6f7ff9cb_1626686065344.jpg"
   },
   {
-    name: "Location 3",
+    name: "Gharuan",
     location: {
       lat: 30.7754,
       lng: 76.560569,
     },
     details: "Pounds are dirty",
+    image: "https://img.freepik.com/premium-photo/dirty-pond-with-full-water-hyacinth-inside-village_150101-3118.jpg?w=1800"
   },
   {
     name: "Kochi",
@@ -168,5 +177,6 @@ const places = [
       lng: 76.297977,
     },
     details: "Kochi Flood affected area",
+    image: "https://static.theprint.in/wp-content/uploads/2018/08/2018_8img19_Aug_2018_PTI8_19_2018_000161B.jpg"
   }
 ];

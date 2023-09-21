@@ -3,6 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { Menu, Search,Siren,PenSquare,Home,X } from "lucide-react"
+import Image from "next/image"
 
 export default function Navbar() {
   const [state, setState] = React.useState(false)
@@ -24,7 +25,7 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white w-full border-b md:border-0">
-      <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
+      <div className="items-baseline px-4 max-w-screen-xl mx-auto md:flex md:px-8">
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
           <Link href="/">
             <h1 className="text-3xl font-bold text-black">
@@ -47,7 +48,7 @@ export default function Navbar() {
             state ? "block" : "hidden"
           }`}
         >
-          <ul className="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+          <ul className="justify-center items-center space-y-8 md:flex md:space-x-14 md:space-y-0">
             {menus.map((item, idx) => (
               <li key={idx} className="text-gray-600 hover:text-black">
                 <Link href={item.path}>{item.title}</Link>
@@ -73,7 +74,9 @@ export default function Navbar() {
               </li>
                     </>
                   )
+                  
              }
+            
               
 
             {/* <form className="flex items-center  space-x-2 border rounded-md p-2">
@@ -85,6 +88,10 @@ export default function Navbar() {
               />
             </form> */}
           </ul>
+          
+        </div>
+        <div className="absolute top-6 right-20">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/G20_India_2023_logo.svg/2560px-G20_India_2023_logo.svg.png" alt="logo" className="w-32 h-16" />
         </div>
       </div>
     </nav>
